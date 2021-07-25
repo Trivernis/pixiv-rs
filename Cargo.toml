@@ -1,0 +1,29 @@
+[package]
+name = "pixiv-rs"
+version = "0.1.0"
+edition = "2018"
+authors = ["trivernis <trivernis@protonmail.com>"]
+description = "Wrapper for the inofficial pixiv ajax api"
+repository = "https://github.com/Trivernis/pixiv-rs"
+readme = "README.md"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+serde = {version = "^1.0", features = ["derive"]}
+reqwest = {version = "0.11.4", features = ["json"]}
+serde_json = "1.0.64"
+
+[dev-dependencies]
+env_logger = "0.8.4"
+lazy_static = "1.4.0"
+log = "0.4.14"
+
+[dev-dependencies.tokio]
+version = "1.8.0"
+features = ["macros", "rt-multi-thread"]
+
+[features]
+rustls = ["reqwest/rustls"]
